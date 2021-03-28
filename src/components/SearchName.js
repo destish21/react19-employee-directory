@@ -6,6 +6,7 @@ const SearchName = () => {
   const context = useContext(DataAreaContext);
 
   return (
+    <div id="container">
     <div className="searchbox">
       <div className="input-group">
         <div className="input-group-prepend">
@@ -15,13 +16,14 @@ const SearchName = () => {
         </div>
         <input
           type="search"
-          className="form-control mr-sm-2"
+          className="form-control"
           placeholder="name"
           aria-label="Search"
           onChange={e => context.handleSearchChange(e)}
         />
       </div>
     </div>
+  </div>
   );
 }
 export default SearchName;
