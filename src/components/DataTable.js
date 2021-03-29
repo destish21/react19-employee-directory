@@ -33,7 +33,6 @@ const DataTable = () => {
             })}
           </tr>
         </thead>
-
         <DataBody />
       </table>
     </div>
