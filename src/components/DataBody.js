@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext } from "react"; 
 import "../styles/DataBody.css";
 import DataAreaContext from "../utils/DataAreaContext";
 
 const DataBody = () => {
-  const context = useContext(DataAreaContext);
+  const context = useContext(DataAreaContext); // destracting useContext
 
-  function formatDate(date) {
+  const formatDate = date => {
     const dateArray = date.split("-");
     const year = dateArray[0];
     const month = dateArray[1];
