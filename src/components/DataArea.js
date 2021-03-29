@@ -8,14 +8,14 @@ import DataAreaContext from "../utils/DataAreaContext";
 const DataArea = () => {
   const [developerState, setDeveloperState] = useState({
     users: [],
-    order: "descend",
+    order: "ascend",
     filteredUsers: [],
     headings: [
-      { name: "Image", width: "10%", order: "descend" },
-      { name: "name", width: "10%", order: "descend" },
-      { name: "phone", width: "20%", order: "descend" },
-      { name: "email", width: "20%", order: "descend" },
-      { name: "dob", width: "10%", order: "descend" }
+      { name: "Image", width: "10%", order: "ascend" },
+      { name: "name", width: "10%", order: "ascend" },
+      { name: "phone", width: "20%", order: "ascend" },
+      { name: "email", width: "20%", order: "ascend" },
+      { name: "dob", width: "10%", order: "ascend" }
     ]
   });
 
@@ -25,21 +25,19 @@ const DataArea = () => {
       .map(elem => elem.order)
       .toString();
 
-    if (currentOrder === "descend") {
-      currentOrder = "ascend";
-    } else {
+    if (currentOrder === "ascend") {
       currentOrder = "descend";
+    } else {
+      currentOrder = "ascend";
     }
 
     const compareFnc = (a, b) => {
-      if (currentOrder === "ascend") {
-        // account for missing values
+      if (currentOrder === "descend") {
         if (a[heading] === undefined) {
           return 1;
         } else if (b[heading] === undefined) {
           return -1;
         }
-        // numerically
         else if (heading === "name") {
           return a[heading].first.localeCompare(b[heading].first);
         } else if (heading === "dob") {
@@ -48,13 +46,11 @@ const DataArea = () => {
           return a[heading].localeCompare(b[heading]);
         }
       } else {
-        // account for missing values
         if (a[heading] === undefined) {
           return 1;
         } else if (b[heading] === undefined) {
           return -1;
         }
-        // numerically
         else if (heading === "name") {
           return b[heading].first.localeCompare(a[heading].first);
         } else if (heading === "dob") {
@@ -89,8 +85,8 @@ const DataArea = () => {
 
     setDeveloperState({ ...developerState, filteredUsers: filteredList });
   };
-
-  ///https://stackoverflow.com/questions/53120972/how-to-call-loading-function-with-react-useeffect-only-once
+  
+// hooks
   useEffect(() => {
     API.getUsers().then(results => {
       console.log(results.data.results);
