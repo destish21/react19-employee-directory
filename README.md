@@ -66,7 +66,7 @@
 
    * you can run by install npm i to include node_module, express, morgan, mongoose, dev, dotenv, copmression and mongoDB_URL and localhost.
 
-   * you can run by node `nodemon server.js or by node server.js` react19-employee-directory.
+   * you can run by node `npm start` react19-employee-directory.
 
    # screenshot Image 1
    * ![react19-employee-directory](./public/Images/screenshot1.png)
