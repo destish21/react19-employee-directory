@@ -15,7 +15,9 @@ const SearchDOB = () => {
         </div>
         {/* <input type="date" className="form-control" onChange={e => context.handleSearchChange(e)} /> */}
 
-        <input type="date" className="form-control" onChange={e => context.handleSearchChange(e)} />
+        <input type="date" 
+        className="form-control" 
+        onChange={e => context.handleSearchChange(e)} />
       </div>
     </div>
   );
