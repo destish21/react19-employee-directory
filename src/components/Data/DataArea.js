@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import DataTable from "./DataTable";
-import Nav from "./Nav";
-import API from "../utils/API";
-import "../styles/DataArea.css";
-import DataAreaContext from "../utils/DataAreaContext";
+import DataTable from "../Table/DataTable";
+import Nav from "../Navbar/Nav";
+import API from "../../utils/API";
+import "./DataArea.css";
+import DataAreaContext from "../../utils/AreaContext";
 
 const DataArea = () => {
   const [developerState, setDeveloperState] = useState({
@@ -13,9 +13,10 @@ const DataArea = () => {
     headings: [
       { name: "Image", width: "10%", order: "ascend" },
       { name: "name", width: "10%", order: "ascend" },
-      { name: "phone", width: "20%", order: "ascend" },
-      { name: "email", width: "20%", order: "ascend" },
-      { name: "dob", width: "10%", order: "ascend" }
+      { name: "phone", width: "15%", order: "ascend" },
+      { name: "email", width: "15%", order: "ascend" },
+      { name: "dob", width: "10%", order: "ascend" },
+      // { name: "locaction", width: "10%", order: "ascend" }, coming son
     ]
   });
 
@@ -58,7 +59,7 @@ const DataArea = () => {
         } else {
           return b[heading].localeCompare(a[heading]);
         }
-      }
+      } 
     };
     const sortedUsers = developerState.filteredUsers.sort(compareFnc);
     const updatedHeadings = developerState.headings.map(elem => {

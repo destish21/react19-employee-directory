@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import "../styles/DataBody.css";
-import DataAreaContext from "../utils/DataAreaContext";
+import "./DataBody.css";
+import DataAreaContext from "../../utils/AreaContext";
 
 const SearchDOB = () => {
   const context = useContext(DataAreaContext);
@@ -9,15 +9,16 @@ const SearchDOB = () => {
     <div className="searchbox">
       <div className="input-group">
         <div className="input-group-prepend">
-          <span className="input-group-text" id="">
+          {/* <span className="input-group-text" id="">
             DOB
-          </span>
+          </span> */}
         </div>
-        {/* <input type="date" className="form-control" onChange={e => context.handleSearchChange(e)} /> */}
+        {/* coming soon */}
+        {/* <input type="date" className="form-control" onChange={e => context.handleSearchChange(e)} />
 
         <input type="date" 
         className="form-control" 
-        onChange={e => context.handleSearchChange(e)} />
+        onChange={e => context.handleSearchChange(e)} /> */}
       </div>
     </div>
   );
